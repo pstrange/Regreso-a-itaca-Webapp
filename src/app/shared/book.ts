@@ -3,7 +3,7 @@ export interface Book {
     creationDate:Number
     tag:string;
     id:string;
-    volumeInfo: {
+    volumeInfo?: {
         title:string;
         publisher:string;
         publishiedDate:string;
@@ -12,12 +12,16 @@ export interface Book {
         categories:string[];
         laguage:string;
         pageCount:Number;
-        imageLinks:{
+        imageLinks?:{
             smallThumbnail:string;
             thumbnail:string;
-        }
+        },
+        industryIdentifiers?:[{
+            identifier:string;
+            type:string;
+        }]
     };
-    localInfo:{
+    localInfo?:{
         price:string;
         stock:Number;
     }
