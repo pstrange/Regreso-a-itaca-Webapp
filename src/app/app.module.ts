@@ -8,6 +8,11 @@ import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './books/book/book.component';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +23,9 @@ import { BookComponent } from './books/book/book.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'Regreso-a-Itaca'),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

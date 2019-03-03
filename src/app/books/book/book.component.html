@@ -1,3 +1,16 @@
-<h3>
-  Libro detalle
-</h3>
+<div class="infoThumb">
+    <img class="imgThumb" src={{book.volumeInfo.imageLinks.thumbnail}}/>
+</div>
+<div class="infoContent">
+  <b>Titulo:</b> {{book.volumeInfo.title}}<br>
+  <b>Autor(es):</b> {{book.volumeInfo.authors.join(', ')}}<br>
+  <b>Editorial:</b> {{book.volumeInfo.publisher}}<br>
+  <b>Fecha:</b> {{book.volumeInfo.publishiedDate}}<br>
+  <b>Categorias:</b> {{book.volumeInfo.categories.join(', ')}}<br>
+  <b>Descripcion:</b> {{book.volumeInfo.description}}<br>
+  <b>Identificadores:</b> {{book.volumeInfo.laguage}}<br>
+  <b>Idioma:</b> {{book.volumeInfo.laguage}}<br>
+  <b>Paginas:</b> {{book.volumeInfo.pageCount.toString()}}<br>
+  <b>Precio:</b> ${{book.localInfo.price}}<br>
+  <b>Cantidad:</b> {{book.localInfo.stock.toString()}}<br>
+</div>
