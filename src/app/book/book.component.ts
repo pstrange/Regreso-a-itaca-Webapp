@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CrudService } from '../../shared/crud.service';
+import { CrudService } from '../shared/crud.service';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/shared/book';
-import { Identifiers } from '@angular/compiler';
 
 @Component({
   selector: 'app-book',
@@ -24,10 +23,9 @@ export class BookComponent implements OnInit, OnDestroy {
         if(data.payload.val()){
           this.book = data.payload.val();
           this.book.volumeInfo.industryIdentifiers.forEach(element => {
-            console.log(element);
             this.identifiers += this.identifiers.length == 0 ? element.identifier : ", "+element.identifier;
-            console.log(this.identifiers);
           });
+          console.log(this.identifiers);
         }
       });
     });
